@@ -1,0 +1,25 @@
+{
+  "name": "date-converter",
+  "authors": [
+    "Yezan Rafed <y.rafed@piman-consultants.fr>"
+  ],
+  "description": "Date converter module",
+  "main": "app.js",
+  "license": "MIT",
+  "private": false,
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "1.2.x",
+    "angular-mocks": "~1.2.x"
+  },
+  "dependencies": {
+    "angular-moment": "^1.0.1"
+  }
+}

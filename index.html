@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body>
+
+    <div ng-app="p2DateConverter.dateEnToFr">
+        <div ng-controller="DemoCtrl">
+            <p>Date : <input type="text" date-en-to-fr ng-model="vm.date"></p>
+        </div>
+    </div>
+
+    <script src="bower_components/moment/moment.js"> </script>
+    <script src="component/dateEnToFr.module.js"></script>
+    <script src="component/dateEnToFr.directive.js"></script>
+    <script src="demoCtrl.js"></script>
+
+</body>
+</html>
