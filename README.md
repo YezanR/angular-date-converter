@@ -17,7 +17,7 @@ Inject the dependecy module:
 
 ### Usage
 
-If you wish to convert a date from french to english of an input, use can add the 'p2-date-en-to-fr' directive:
+If you wish to convert a date from french to english of an input, you can add the 'p2-date-en-to-fr' directive:
 
     <input type="text" ng-model="user.date_of_birth" p2-date-en-to-fr >
 
