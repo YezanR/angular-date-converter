@@ -10,7 +10,8 @@
     function Utils(moment) {
 
         var service = {
-            dateEnglishToFrench: dateEnglishToFrench
+            dateEnglishToFrench: dateEnglishToFrench,
+            dateFrenchToEnglish: dateFrenchToEnglish
         };
 
         function dateEnglishToFrench(input) {
@@ -18,6 +19,13 @@
                 return moment(input, 'DD/MM/YYYY').format('DD/MM/YYYY'); 
             } 
             return moment(input, 'YYYY-MM-DD h:mm:ss').format('DD/MM/YYYY');
+        }
+
+        function dateFrenchToEnglish(input) {
+            if ( moment(input, 'YYYY-DD-MM').isValid() ) {
+                return moment(input, 'YYYY-DD-MM').format('YYYY-DD-MM h:mm:ss'); 
+            } 
+            return moment(input, 'DD/MM/YYYY h:mm:ss').format('YYYY-DD-MM h:mm:ss');
         }
 
         return service;

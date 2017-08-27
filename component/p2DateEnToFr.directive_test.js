@@ -1,6 +1,6 @@
 'use strict';
 
-describe('english dates', function() {
+describe('english date converter', function() {
 
   var compile, scope, directiveElem;
   
@@ -29,7 +29,7 @@ describe('english dates', function() {
     scope.$apply();
   }
 
-  it('has to convert 2017-06-06', function() {
+  it('has to convert 2017-06-06 to french date', function() {
 
     // Set date
     setInput('2017-06-06');
@@ -37,7 +37,7 @@ describe('english dates', function() {
 
   })
 
-  it('has to convert 2017-08-06', function() {
+  it('has to convert 2017-08-06 to french date', function() {
     
         // Set date
         setInput('2017-08-06');
@@ -45,7 +45,7 @@ describe('english dates', function() {
     
   })
 
-  it('has to convert 0000-00-00 00:00:00', function() {
+  it('has to detect 0000-00-00 00:00:00 as invalid date', function() {
     
         // Set date
         setInput('0000-00-00 00:00:00');
@@ -53,7 +53,7 @@ describe('english dates', function() {
     
   })
 
-  it('has to convert 1993-12-09 00:00:00', function() {
+  it('has to convert 1993-12-09 00:00:00 to french date', function() {
     
       // Set date
       setInput('1993-12-09 00:00:00');
@@ -61,7 +61,7 @@ describe('english dates', function() {
     
   })
 
-  it('has to accept a french date too ( 09/12/1993 )', function() {
+  it('has to accept already converted date ( 09/12/1993 )', function() {
     
       // Set date
       setInput('09/12/1993');
@@ -77,4 +77,6 @@ describe('english dates', function() {
     
   })
 
+
 });
+
