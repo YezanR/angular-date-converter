@@ -6,7 +6,7 @@ module.exports = {
   srcJs: ['component/**/*.module.js', 'component/**/*.js', '!component/**/*_test.js'],
   tests: 'component/**/*_test.js',
   buildFolder: 'dist',
-  buildJsFilename: 'p2DateEnToFr.js',
+  buildJsFilename: 'p2DateConverter.js',
   banner: '/*!\n' +
     ' * See LICENSE in this repository for license information\n' +
     ' */\n',

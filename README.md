@@ -9,11 +9,11 @@ In your `index.html` include the following scripts:
 
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-moment/angular-moment.min.js"></script>
-    <script src="bower_components/date-converter/dist/p2DateEnToFr.min.js"></script>
+    <script src="bower_components/date-converter/dist/p2DateConverter.min.js"></script>
 
 Inject the dependecy module:
 
-    angular.module('demo', ['p2DateConverter.p2DateEnToFr']);
+    angular.module('demo', ['p2DateConverter']);
 
 ### Usage
 
