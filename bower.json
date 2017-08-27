@@ -4,7 +4,7 @@
     "Yezan Rafed <y.rafed@piman-consultants.fr>"
   ],
   "description": "Date converter module",
-  "main": "p2DateEnToFr.js",
+  "main": "p2DateConverter.js",
   "license": "MIT",
   "private": false,
   "homepage": "",
