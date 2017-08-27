@@ -55,9 +55,25 @@ describe('english dates', function() {
 
   it('has to convert 1993-12-09 00:00:00', function() {
     
-        // Set date
-        setInput('1993-12-09 00:00:00');
-        expect(directiveElem.val()).toEqual('09/12/1993');
+      // Set date
+      setInput('1993-12-09 00:00:00');
+      expect(directiveElem.val()).toEqual('09/12/1993');
+    
+  })
+
+  it('has to accept a french date too ( 09/12/1993 )', function() {
+    
+      // Set date
+      setInput('09/12/1993');
+      expect(directiveElem.val()).toEqual('09/12/1993');
+    
+  })
+
+  it('has to ignore content after date string', function() {
+    
+      // Set date
+      setInput('09/12/1993 dummy content here');
+      expect(directiveElem.val()).toEqual('09/12/1993');
     
   })
 
