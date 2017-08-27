@@ -21,8 +21,8 @@
       .module('p2DateConverter')
       .directive('p2DateEnToFr', DateEnToFr);
 
-    DateEnToFr.$inject = ['moment'];
-    function DateEnToFr (moment) {
+    DateEnToFr.$inject = ['p2DateUtils'];
+    function DateEnToFr (p2DateUtils) {
 
         return {
             require: 'ngModel',
@@ -32,10 +32,7 @@
                     
                     if ( value )
                     {
-                        if ( moment(value, 'DD/MM/YYYY').isValid() ) {
-                            return moment(value, 'DD/MM/YYYY').format('DD/MM/YYYY'); 
-                        } 
-                        return moment(value, 'YYYY-MM-DD h:mm:ss').format('DD/MM/YYYY');
+                        return p2DateUtils.dateEnglishToFrench(value);
                     }
 
                 });
