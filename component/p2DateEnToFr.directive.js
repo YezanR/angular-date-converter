@@ -18,7 +18,7 @@
   'use strict';
 
   angular
-      .module('p2DateConverter.p2DateEnToFr')
+      .module('p2DateConverter')
       .directive('p2DateEnToFr', DateEnToFr);
 
     DateEnToFr.$inject = ['moment'];

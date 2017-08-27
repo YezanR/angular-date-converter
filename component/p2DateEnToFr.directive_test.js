@@ -5,7 +5,7 @@ describe('english dates', function() {
   var compile, scope, directiveElem;
   
   beforeEach(function(){
-    angular.mock.module('p2DateConverter.p2DateEnToFr');
+    angular.mock.module('p2DateConverter');
     
     inject(function($compile, $rootScope){
       compile = $compile;
