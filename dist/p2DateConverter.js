@@ -79,10 +79,10 @@
         }
 
         function dateFrenchToEnglish(input) {
-            if ( moment(input, 'YYYY-DD-MM').isValid() ) {
-                return moment(input, 'YYYY-DD-MM').format('YYYY-DD-MM h:mm:ss'); 
+            if ( moment(input, 'YYYY-MM-DD').isValid() ) {
+                return moment(input, 'YYYY-MM-DD').format('YYYY-MM-DD h:mm:ss'); 
             } 
-            return moment(input, 'DD/MM/YYYY h:mm:ss').format('YYYY-DD-MM h:mm:ss');
+            return moment(input, 'DD/MM/YYYY h:mm:ss').format('YYYY-MM-DD h:mm:ss');
         }
 
         return service;
