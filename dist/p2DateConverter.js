@@ -28,13 +28,8 @@
  *      '2017-222-111' -> Not a valid input    
  */
 (function () {
-  'use strict';
+    'use strict';
 
-  angular
-      .module('p2DateConverter')
-      .directive('p2DateEnToFr', DateEnToFr);
-
-    DateEnToFr.$inject = ['p2DateUtils'];
     function DateEnToFr (p2DateUtils) {
 
         return {
@@ -53,6 +48,13 @@
             }
         };
     }
+
+    angular
+        .module('p2DateConverter')
+        .directive('p2DateEnToFr', DateEnToFr);
+
+    DateEnToFr.$inject = ['p2DateUtils'];
+    
     
 })();
 
@@ -60,34 +62,47 @@
     
     'use strict';
 
-    angular.module('p2DateConverter')
-        .service('p2DateUtils', Utils);
-
-    Utils.$inject = ['moment'];
     function Utils(moment) {
+        
+        var frenchFormat = 'DD/MM/YYYY HH:mm:ss';
+        var englishFormat = 'YYYY-MM-DD HH:mm:ss';
+
+        function dateEnglishToFrench(input) {
+            //Check if it's already a french date
+            if ( moment(input, 'DD/MM/YYYY', true).isValid() ||
+                moment(input, 'DD/MM/YYYY HH', true).isValid() || 
+                moment(input, 'DD/MM/YYYY HH:mm', true).isValid() ||
+                moment(input, 'DD/MM/YYYY HH:mm:ss', true).isValid()) {
+                return moment(input, 'DD/MM/YYYY HH:mm:ss').format(frenchFormat);
+            } 
+            return moment(input, 'YYYY-MM-DD HH:mm:ss').format(frenchFormat);
+        }
+
+        function dateFrenchToEnglish(input) {
+            //Check if it's already an english date, if so, then return the same input
+            if ( moment(input, 'YYYY-MM-DD', true).isValid() ||
+                 moment(input, 'YYYY-MM-DD HH', true).isValid() ||
+                moment(input, 'YYYY-MM-DD HH:mm', true).isValid() ||
+                moment(input, 'YYYY-MM-DD HH:mm:ss', true).isValid()) {
+                return moment(input, 'YYYY-MM-DD HH:mm:ss').format(englishFormat);
+            } 
+            return moment(input, 'DD/MM/YYYY hh:mm:ss').format(englishFormat);
+        }
 
         var service = {
             dateEnglishToFrench: dateEnglishToFrench,
             dateFrenchToEnglish: dateFrenchToEnglish
         };
 
-        function dateEnglishToFrench(input) {
-            if ( moment(input, 'DD/MM/YYYY').isValid() ) {
-                return moment(input, 'DD/MM/YYYY').format('DD/MM/YYYY'); 
-            } 
-            return moment(input, 'YYYY-MM-DD h:mm:ss').format('DD/MM/YYYY');
-        }
-
-        function dateFrenchToEnglish(input) {
-            if ( moment(input, 'YYYY-MM-DD').isValid() ) {
-                return moment(input, 'YYYY-MM-DD').format('YYYY-MM-DD h:mm:ss'); 
-            } 
-            return moment(input, 'DD/MM/YYYY h:mm:ss').format('YYYY-MM-DD h:mm:ss');
-        }
-
         return service;
 
     }
+
+    angular.module('p2DateConverter')
+        .service('p2DateUtils', Utils);
+
+    Utils.$inject = ['moment'];
+    
 
 })();
 
@@ -96,10 +111,6 @@
 
     'use strict';
 
-    angular.module('p2DateConverter')
-        .filter('frenchDate', frenchDate);
-    
-    frenchDate.$inject = ['p2DateUtils'];
     function frenchDate(p2DateUtils) {
         return function(input) {
 
@@ -111,6 +122,11 @@
             }
         };
     }
+    
+    angular.module('p2DateConverter')
+        .filter('frenchDate', frenchDate);
+    
+    frenchDate.$inject = ['p2DateUtils'];
 
 })();
 })();

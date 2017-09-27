@@ -15,13 +15,8 @@
  *      '2017-222-111' -> Not a valid input    
  */
 (function () {
-  'use strict';
+    'use strict';
 
-  angular
-      .module('p2DateConverter')
-      .directive('p2DateEnToFr', DateEnToFr);
-
-    DateEnToFr.$inject = ['p2DateUtils'];
     function DateEnToFr (p2DateUtils) {
 
         return {
@@ -40,5 +35,12 @@
             }
         };
     }
+
+    angular
+        .module('p2DateConverter')
+        .directive('p2DateEnToFr', DateEnToFr);
+
+    DateEnToFr.$inject = ['p2DateUtils'];
+    
     
 })();

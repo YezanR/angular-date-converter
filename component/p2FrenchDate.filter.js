@@ -3,10 +3,6 @@
 
     'use strict';
 
-    angular.module('p2DateConverter')
-        .filter('frenchDate', frenchDate);
-    
-    frenchDate.$inject = ['p2DateUtils'];
     function frenchDate(p2DateUtils) {
         return function(input) {
 
@@ -18,5 +14,10 @@
             }
         };
     }
+    
+    angular.module('p2DateConverter')
+        .filter('frenchDate', frenchDate);
+    
+    frenchDate.$inject = ['p2DateUtils'];
 
 })();
