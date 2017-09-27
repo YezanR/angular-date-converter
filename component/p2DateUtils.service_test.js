@@ -14,12 +14,12 @@ describe('French -> english utils test', function() {
         
     });
 
-    it('has to convert 01/12/2017 to 2017-12-01 12:00:00', function() {
+    it('has to convert 01/12/2017 to 2017-12-01 00:00:00', function() {
         
         // Set date
         var input = "01/12/2017";
         var convertedInput =  DateUtils.dateFrenchToEnglish(input);
-        expect(convertedInput).toEqual('2017-12-01 12:00:00');
+        expect(convertedInput).toEqual('2017-12-01 00:00:00');
     
     })
 
@@ -41,21 +41,21 @@ describe('French -> english utils test', function() {
     
     })
 
-    it('has to accept english date 2019-02-02 01, no conversion to be done', function() {
+    it('has to accept english date 2019-02-02 01 and return 2019-02-02 01:00:00', function() {
         
         // Set date
         var input = "2019-02-02 01";
         var convertedInput =  DateUtils.dateFrenchToEnglish(input);
-        expect(convertedInput).toEqual('2019-02-02 01');
+        expect(convertedInput).toEqual('2019-02-02 01:00:00');
     
     })
 
-    it('has to accept english date 2019-02-02 01:35, no conversion to be done', function() {
+    it('has to accept english date 2019-02-02 01:35 and return 2019-02-02 01:35:00', function() {
         
         // Set date
         var input = "2019-02-02 01:35";
         var convertedInput =  DateUtils.dateFrenchToEnglish(input);
-        expect(convertedInput).toEqual('2019-02-02 01:35');
+        expect(convertedInput).toEqual('2019-02-02 01:35:00');
     
     })
 
@@ -83,12 +83,12 @@ describe('English -> french utils test', function() {
         
     });
 
-    it('has to convert 2017-12-01 03:15:02 to 01/12/2017', function() {
+    it('has to convert 2017-12-01 to 01/12/2017 00:00:00', function() {
         
         // Set date
         var input = "2017-12-01";
         var convertedInput =  DateUtils.dateEnglishToFrench(input);
-        expect(convertedInput).toEqual('01/12/2017');
+        expect(convertedInput).toEqual('01/12/2017 00:00:00');
     
     })
 
