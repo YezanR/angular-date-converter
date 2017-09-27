@@ -14,18 +14,27 @@
             dateFrenchToEnglish: dateFrenchToEnglish
         };
 
+
         function dateEnglishToFrench(input) {
-            if ( moment(input, 'DD/MM/YYYY').isValid() ) {
-                return moment(input, 'DD/MM/YYYY').format('DD/MM/YYYY'); 
+            //Check if it's already a french date, if so, then return the same input
+            if ( moment(input, 'DD/MM/YYYY', true).isValid() 
+                || moment(input, 'DD/MM/YYYY hh', true).isValid()
+                || moment(input, 'DD/MM/YYYY hh:mm', true).isValid() 
+                || moment(input, 'DD/MM/YYYY hh:mm:ss', true).isValid()) {
+                return input; 
             } 
-            return moment(input, 'YYYY-MM-DD h:mm:ss').format('DD/MM/YYYY');
+            return moment(input, 'YYYY-MM-DD hh:mm:ss').format('DD/MM/YYYY');
         }
 
         function dateFrenchToEnglish(input) {
-            if ( moment(input, 'YYYY-MM-DD').isValid() ) {
-                return moment(input, 'YYYY-MM-DD').format('YYYY-MM-DD h:mm:ss'); 
+            //Check if it's already an english date, if so, then return the same input
+            if ( moment(input, 'YYYY-MM-DD', true).isValid() 
+                || moment(input, 'YYYY-MM-DD hh', true).isValid()
+                || moment(input, 'YYYY-MM-DD hh:mm', true).isValid() 
+                || moment(input, 'YYYY-MM-DD hh:mm:ss', true).isValid()) {
+                return input; 
             } 
-            return moment(input, 'DD/MM/YYYY h:mm:ss').format('YYYY-MM-DD h:mm:ss');
+            return moment(input, 'DD/MM/YYYY hh:mm:ss').format('YYYY-MM-DD hh:mm:ss');
         }
 
         return service;

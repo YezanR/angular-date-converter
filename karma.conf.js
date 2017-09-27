@@ -8,10 +8,12 @@ module.exports = function(config) {
       './bower_components/moment/moment.js',
       './bower_components/angular-moment/angular-moment.js',
 
-      './component/p2DateEnToFr.module.js',
+      './component/p2DateConverter.module.js',
+      './component/p2DateUtils.service.js',
       './component/p2DateEnToFr.directive.js',
 
-      './component/p2DateEnToFr.directive_test.js'
+      './component/p2DateEnToFr.directive_test.js',
+      './component/p2DateUtils.service_test.js'
 
     ],
     exclude: [

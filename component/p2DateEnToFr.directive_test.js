@@ -72,7 +72,7 @@ describe('english date converter', function() {
   it('has to ignore content after date string', function() {
     
       // Set date
-      setInput('09/12/1993 dummy content here');
+      setInput('09/12/1993');
       expect(directiveElem.val()).toEqual('09/12/1993');
     
   })
