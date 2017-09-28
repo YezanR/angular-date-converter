@@ -4,15 +4,6 @@
  * It is a sort of hook between data passed from the controller and the model.
  * Accpets an english or french date and convert it to french date.
  * 
- * Note: Accepts a date format, if it's valid then it will ignore any content that comes after the date
- * 
- * For example:  
- *      '2017-07-07' -> valid input 
- *      '2017-07-07 dummy string' -> valid input    
- *      '07/07/2017' -> valid input
- *      '07/07/2017 23:40' -> valid input    
- *      '07/07/2017 aassdsdsdsd' -> valid input
- *      '2017-222-111' -> Not a valid input    
  */
 (function () {
     'use strict';
@@ -21,13 +12,14 @@
 
         return {
             require: 'ngModel',
+            restrict: 'A',
             link: function(scope, element, attrs, modelCtrl) {
 
                 modelCtrl.$formatters.push(function(value) {
                     
                     if ( value )
                     {
-                        return p2DateUtils.dateEnglishToFrench(value);
+                        return p2DateUtils.dateEnglishToFrench(value, attrs.p2TimeFormat);
                     }
 
                 });

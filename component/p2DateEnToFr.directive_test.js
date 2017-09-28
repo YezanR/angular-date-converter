@@ -3,6 +3,9 @@
 describe('english date converter', function() {
 
   var compile, scope, directiveElem;
+
+  //This may change in each test case
+  var timeFormat = '';
   
   beforeEach(function(){
     angular.mock.module('p2DateConverter');
@@ -33,6 +36,8 @@ describe('english date converter', function() {
 
     // Set date
     setInput('2017-06-06');
+    // Set format
+
     expect(directiveElem.val()).toEqual('06/06/2017');
 
   })
@@ -68,6 +73,7 @@ describe('english date converter', function() {
       expect(directiveElem.val()).toEqual('09/12/1993');
     
   })
+
 
   it('has to convert 1993-12-09 00:00:00 to french date', function() {
     

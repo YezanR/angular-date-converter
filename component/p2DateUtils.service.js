@@ -5,18 +5,19 @@
 
     function Utils(moment) {
         
-        var frenchFormat = 'DD/MM/YYYY';
+        var frenchDateFormat = 'DD/MM/YYYY';
         var englishFormat = 'YYYY-MM-DD HH:mm:ss';
 
-        function dateEnglishToFrench(input) {
+        function dateEnglishToFrench(input, timeFormat) {
+            var fullFormat = frenchDateFormat + ( timeFormat ? ' '+timeFormat : '');
             //Check if it's already a french date
             if ( moment(input, 'DD/MM/YYYY', true).isValid() ||
                 moment(input, 'DD/MM/YYYY HH', true).isValid() || 
                 moment(input, 'DD/MM/YYYY HH:mm', true).isValid() ||
                 moment(input, 'DD/MM/YYYY HH:mm:ss', true).isValid()) {
-                return moment(input, 'DD/MM/YYYY HH:mm:ss').format(frenchFormat);
+                return moment(input, 'DD/MM/YYYY HH:mm:ss').format(fullFormat);
             } 
-            return moment(input, 'YYYY-MM-DD HH:mm:ss').format(frenchFormat);
+            return moment(input, 'YYYY-MM-DD HH:mm:ss').format(fullFormat);
         }
 
         function dateFrenchToEnglish(input) {
