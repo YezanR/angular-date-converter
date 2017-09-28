@@ -5,7 +5,7 @@
 
     function Utils(moment) {
         
-        var frenchFormat = 'DD/MM/YYYY HH:mm:ss';
+        var frenchFormat = 'DD/MM/YYYY';
         var englishFormat = 'YYYY-MM-DD HH:mm:ss';
 
         function dateEnglishToFrench(input) {

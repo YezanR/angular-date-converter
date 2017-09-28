@@ -83,12 +83,12 @@ describe('English -> french utils test', function() {
         
     });
 
-    it('has to convert 2017-12-01 to 01/12/2017 00:00:00', function() {
+    it('has to convert 2017-12-01 to 01/12/2017', function() {
         
         // Set date
         var input = "2017-12-01";
         var convertedInput =  DateUtils.dateEnglishToFrench(input);
-        expect(convertedInput).toEqual('01/12/2017 00:00:00');
+        expect(convertedInput).toEqual('01/12/2017');
     
     })
 

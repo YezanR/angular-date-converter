@@ -33,7 +33,7 @@ describe('english date converter', function() {
 
     // Set date
     setInput('2017-06-06');
-    expect(directiveElem.val()).toEqual('06/06/2017 00:00:00');
+    expect(directiveElem.val()).toEqual('06/06/2017');
 
   })
 
@@ -41,7 +41,7 @@ describe('english date converter', function() {
     
         // Set date
         setInput('2017-08-06 03:15:00');
-        expect(directiveElem.val()).toEqual('06/08/2017 03:15:00');
+        expect(directiveElem.val()).toEqual('06/08/2017');
     
   })
 
@@ -49,7 +49,7 @@ describe('english date converter', function() {
     
         // Set date
         setInput('2017-08-06 23:15');
-        expect(directiveElem.val()).toEqual('06/08/2017 23:15:00');
+        expect(directiveElem.val()).toEqual('06/08/2017');
     
   })
 
@@ -65,7 +65,7 @@ describe('english date converter', function() {
     
       // Set date
       setInput('1993-12-09 00:00:00');
-      expect(directiveElem.val()).toEqual('09/12/1993 00:00:00');
+      expect(directiveElem.val()).toEqual('09/12/1993');
     
   })
 
@@ -73,7 +73,7 @@ describe('english date converter', function() {
     
       // Set date
       setInput('1993-12-09 04');
-      expect(directiveElem.val()).toEqual('09/12/1993 04:00:00');
+      expect(directiveElem.val()).toEqual('09/12/1993');
     
   })
 
@@ -81,7 +81,7 @@ describe('english date converter', function() {
     
       // Set date
       setInput('09/12/1993');
-      expect(directiveElem.val()).toEqual('09/12/1993 00:00:00');
+      expect(directiveElem.val()).toEqual('09/12/1993');
     
   })
 
