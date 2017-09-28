@@ -25,6 +25,7 @@
 
         return {
             require: 'ngModel',
+            restrict: 'A',
             link: function(scope, element, attrs, modelCtrl) {
 
                 modelCtrl.$formatters.push(function(value) {
